@@ -1,9 +1,7 @@
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.fail;
-
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
 public class ConvertibleCarTests {
 	private ConvertibleCar Car;
@@ -12,8 +10,8 @@ public class ConvertibleCarTests {
 	public void setup() {
 		String model = "Miata";
 		IEngine engine = new SmallEngine();
-		IIgnition ignitionSystem = new ElectronicIgnition();
-
+		ElectronicIgnition ignitionSystem = new ElectronicIgnition();
+		
 		this.Car = new ConvertibleCar(model, engine, ignitionSystem);
 	}
 
@@ -21,9 +19,9 @@ public class ConvertibleCarTests {
 	public void canBuildConvertibleCar() {
 		ConvertibleCar car = this.Car;
 
-		String actualModel = car.getModel();
+		String model = car.getModel();
 
-		assertEquals(actualModel, Car.getModel() , "");
+		assertEquals(model, Car.getModel() , "The car models should be same!");
 	}
 
 	@Test
@@ -32,16 +30,26 @@ public class ConvertibleCarTests {
 		
 		boolean isStarted = car.getIsStarted();
 
-		assertTrue(isStarted, "");
+		assertTrue(isStarted, "Convertible didn't start!");
 	}
 
 	@Test
 	public void canLowerTop() {
-		fail("not implemented yet");
+		ConvertibleCar car = this.Car;
+		
+		boolean isLower= car.lowerRoof();
+		
+		assertTrue(isLower,"The car should be able to lower the roof!");
+		
 	}
 
 	@Test
 	public void canRaiseTop() {
-		fail("not implemented yet");
+		ConvertibleCar car = this.Car;
+		
+		boolean isRaised= car.raiseRoof();
+		
+		assertTrue(isRaised,"The car should be able to raise the roof!");
+
 	}
 }
