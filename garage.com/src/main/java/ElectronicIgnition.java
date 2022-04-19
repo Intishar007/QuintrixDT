@@ -1,4 +1,3 @@
-
 public class ElectronicIgnition implements IIgnition {
 
 	private boolean IsOn;

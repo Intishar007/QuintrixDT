@@ -1,10 +1,10 @@
-public abstract class MotorizedVehicle {
+public abstract class MotorizedVehicle implements ICar {
 	public String color;
 	private IEngine engine;
 	private String model;
-	private IIgnition ignitionSystem;
+	private ElectronicIgnition ignitionSystem;
 
-	public MotorizedVehicle(String model, IEngine engine, IIgnition ignitionSystem) {
+	public MotorizedVehicle(String model, IEngine engine, ElectronicIgnition ignitionSystem) {
 		this.engine = engine;
 		this.model = model;
 		this.ignitionSystem = ignitionSystem;

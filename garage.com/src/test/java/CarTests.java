@@ -18,18 +18,19 @@ public class CarTests {
 	@Test
 	public void canBuildCar() {
 		Car car = this.Car;
-
+		
 		String actualModel = car.getModel();
 
-		assertEquals(actualModel, Car.getModel() , "");
+		assertEquals(actualModel, Car.getModel() , "The car models should be same!");
 	}
 
 	@Test
 	public void canStartCar() {
+		
 		Car car = this.Car;
 
 		boolean isStarted = car.getIsStarted();
 
-		assertTrue(isStarted, "");
+		assertTrue(isStarted, "Car didn't start!");
 	}
 }
